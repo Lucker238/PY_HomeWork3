@@ -10,6 +10,19 @@ def createList(len):
     return result
 
 def findDifference(array):
-    result = 0
+    minn = array[0] % 1
+    maxx = array[0] % 1
+    for i in array:
+        if i % 1 > maxx:
+            maxx = i % 1
+        elif 0 < i % 1 < minn:
+            minn = i % 1
+    print(f'{round(maxx,2)}-{round(minn,2)}',end='=')
+    return round(maxx - minn,2)
+
+
+array = createList(input('Введите длину массива чисел: '))
+print(array)
+print(findDifference(array))
 
     
